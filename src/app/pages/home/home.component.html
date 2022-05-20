@@ -1,1 +1,9 @@
-<p>home works!</p>
+
+<app-demo [strCollection]="strCollection" (userClick)="userClicked($event)"></app-demo>
+
+<div *ngIf="isVisible; else otherDiv">
+    Hola que tal
+</div>
+<ng-template #otherDiv>
+    Me llamo Matias
+</ng-template>

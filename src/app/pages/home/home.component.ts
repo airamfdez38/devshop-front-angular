@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public title: string;
+
+  public strCollection = ['a', 'b', 'c'];
+
+  public isVisible = true;
+
+  constructor() { 
+    this.title = 'DevShop';
+
+  }
 
   ngOnInit(): void {
+    
+  }
+
+  userClicked(str: string){
+   this.isVisible = !this.isVisible;
   }
 
 }
