@@ -2,8 +2,18 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    &__socials{
+    .header__socials{
         width: 100%;
         background-color: red;
+        .header-socials__list{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            list-style: none;
+            .socials-list__link{
+                text-decoration: none;
+            }
+        }
     }
 }
