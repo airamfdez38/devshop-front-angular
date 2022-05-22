@@ -41,6 +41,7 @@ header .header__socials .header-socials__list .socials-list__link {
 }
 
 header .header__main {
+  padding: 0 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,5 +55,31 @@ header .header__main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 80px;
+  background-color: grey;
+}
+
+header .header__main .header-main__userArea {
+  width: 10%;
+}
+
+header .header__main .header-main__userArea .main-userArea__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .header__main .header-main__userArea .main-userArea__list .userArea__link {
+  list-style: none;
 }
 /*# sourceMappingURL=header.component.css.map */
