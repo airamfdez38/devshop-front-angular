@@ -1,7 +1,7 @@
 
 <app-demo [strCollection]="strCollection" (userClick)="userClicked($event)"></app-demo>
 
-<div *ngIf="isVisible; else otherDiv">
+<div *ngIf="isVisible; else otherDiv" class="home">
     Hola que tal
 </div>
 <ng-template #otherDiv>
