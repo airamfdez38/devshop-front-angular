@@ -18,7 +18,7 @@ nav .navbar__menu {
       -ms-flex-align: center;
           align-items: center;
   list-style: none;
-  border-bottom: 1px solid green;
+  border-bottom: 1px solid #085274;
 }
 
 nav .navbar__menu .navbar-menu__link {
@@ -29,5 +29,6 @@ nav .navbar__menu .navbar-menu__link {
 nav .navbar__menu .navbar-menu__link .menu-link__anchor {
   text-decoration: none;
   font-size: 1.2rem;
+  color: #085274;
 }
 /*# sourceMappingURL=navbar.component.css.map */

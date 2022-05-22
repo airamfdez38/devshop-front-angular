@@ -12,7 +12,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: grey;
+  border-top: 1px solid #AFC0C5;
 }
 
 footer .footer__lists {
@@ -46,6 +46,7 @@ footer .footer__lists .lists__info {
 footer .footer__lists .lists__info .lists-aboutUs__title, footer .footer__lists .lists__info .lists-help__title, footer .footer__lists .lists__info .lists-followUs__title {
   text-transform: uppercase;
   padding-bottom: 10px;
+  color: #085274;
 }
 
 footer .footer__lists .lists__info .lists-aboutUs__list, footer .footer__lists .lists__info .lists-help__list, footer .footer__lists .lists__info .lists-followUs__list {
@@ -59,11 +60,14 @@ footer .footer__lists .lists__info .list__link {
 
 footer .footer__lists .lists__info .list-link__anchor {
   text-decoration: none;
+  color: #085274;
 }
 
 footer .footer__lists .lists__copyright {
   margin: auto;
-  padding: 20px;
+  font-size: 0.9rem;
+  padding: 10px;
+  color: #085274;
 }
 
 footer .footer__logo {
@@ -75,17 +79,19 @@ footer .footer__logo {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #AFC0C5;
+  padding: 50px;
 }
 
 footer .footer__logo .footer-logo__divider {
-  width: 80%;
-  border-bottom: 1px solid black;
+  width: 90%;
+  margin: 30px auto;
+  border-bottom: 1px solid #085274;
 }
 
 footer .footer__logo .footer-logo__slogan {

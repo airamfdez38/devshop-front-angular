@@ -14,7 +14,7 @@ header {
 header .header__socials {
   width: 100%;
   height: auto;
-  background-color: red;
+  background-color: #085274;
 }
 
 header .header__socials .header-socials__list {
@@ -56,7 +56,7 @@ header .header__main {
       -ms-flex-align: center;
           align-items: center;
   height: 80px;
-  background-color: grey;
+  background-color: #AFC0C5;
 }
 
 header .header__main .header-main__userArea {
