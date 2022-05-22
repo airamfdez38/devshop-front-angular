@@ -13,6 +13,7 @@ header {
 
 header .header__socials {
   width: 100%;
+  height: auto;
   background-color: red;
 }
 
@@ -24,9 +25,9 @@ header .header__socials .header-socials__list {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -35,5 +36,23 @@ header .header__socials .header-socials__list {
 
 header .header__socials .header-socials__list .socials-list__link {
   text-decoration: none;
+  margin: 5px;
+  padding: 5px;
+}
+
+header .header__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=header.component.css.map */
