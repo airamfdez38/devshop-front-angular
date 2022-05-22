@@ -7,13 +7,14 @@ import { FooterModule } from './shared/components/footer/footer.module';
 import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DemoComponent } from './shared/components/demo/demo.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HeaderModule, FooterModule, NavbarModule, FontAwesomeModule
+    BrowserModule, AppRoutingModule, HeaderModule, FooterModule, NavbarModule, FontAwesomeModule, SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
