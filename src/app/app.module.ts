@@ -8,10 +8,12 @@ import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DemoComponent } from './shared/components/demo/demo.component';
 import { SwiperModule } from 'swiper/angular';
+import { RegisterComponent } from './shared/components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, HeaderModule, FooterModule, NavbarModule, FontAwesomeModule, SwiperModule

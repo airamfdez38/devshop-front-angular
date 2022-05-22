@@ -13,7 +13,8 @@ import { DemoModule } from '../../shared/components/demo/demo.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    DemoModule
+    DemoModule,
+    
   ]
 })
 export class HomeModule { }
