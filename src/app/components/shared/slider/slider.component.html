@@ -1,1 +1,11 @@
-<p>slider works!</p>
+<swiper
+[config]="config"
+    >
+    <ng-container *ngFor="let imgPath of imgCollection">
+      <ng-template swiperSlide>
+          <img [src]="imgPath" alt="Imagen slider">
+      </ng-template>
+
+    </ng-container>
+      
+    </swiper>

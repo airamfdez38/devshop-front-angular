@@ -12,7 +12,6 @@ import { SliderComponent } from './components/shared/slider/slider.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SliderComponent,
     
     
   ],

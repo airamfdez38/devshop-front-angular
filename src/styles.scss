@@ -1,3 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/scss/globals.scss";
 @import "./assets/scss/variables.scss";
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
