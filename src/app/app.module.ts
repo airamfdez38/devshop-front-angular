@@ -2,21 +2,22 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderModule } from './shared/components/header/header.module';
-import { FooterModule } from './shared/components/footer/footer.module';
-import { NavbarModule } from './shared/components/navbar/navbar.module';
+import { HeaderModule } from './components/shared/header/header.module';
+import { FooterModule } from './components/shared/footer/footer.module';
+import { NavbarModule } from './components/shared/navbar/navbar.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DemoComponent } from './shared/components/demo/demo.component';
-import { SwiperModule } from 'swiper/angular';
-import { RegisterComponent } from './shared/components/register/register.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SliderComponent } from './components/shared/slider/slider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent
+    SliderComponent,
+    
+    
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HeaderModule, FooterModule, NavbarModule, FontAwesomeModule, SwiperModule
+    BrowserModule, AppRoutingModule, HeaderModule, FooterModule, NavbarModule, FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
