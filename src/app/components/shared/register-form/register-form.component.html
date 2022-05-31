@@ -1,1 +1,30 @@
-<p>register-form works!</p>
+<form [formGroup]="registerForm" novalidate>
+    <div>
+        <label for="name">Nombre</label>
+        <input type="text" formControlName="name">
+    </div>
+    <div>
+        <label for="surname">Apellidos</label>
+        <input type="text" formControlName="surname">
+    </div>
+    <div>
+        <label for="dni">DNI</label>
+        <input type="text" formControlName="dni">
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" formControlName="email">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" formControlName="password">
+        <button (click)="tooglePassword">eye</button>
+    </div>
+    <div>
+        <label for="phone">Teléfono</label>
+        <input type="text" formControlName="phone">
+    </div>
+    <div>
+        <button type="submit" (click)="submit()">Enviar</button>
+    </div>
+</form>

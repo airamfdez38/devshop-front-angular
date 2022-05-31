@@ -5,6 +5,7 @@ import { LoginDto } from '../models/login-dto.model';
 import { environment } from '../../../environments/environment.prod';
 import { UserCredentials } from '../models/user-credentials.model';
 import { format, getUnixTime, isAfter } from 'date-fns';
+import { RegisterDto } from '../models/register-dto.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,8 @@ export class LoginService {
   }
 
   userCredentialsBuilder(token: string): void {
-   const payload: UserCredentials = JSON.parse(atob(token.split('.')[1]));
+  const payloadBase64 = token.split('.')[1];
+   const payload: UserCredentials = JSON.parse(atob(payloadBase64));
    const userCred: UserCredentials = new UserCredentials();
    userCred.name = payload.name;
    userCred.surname = payload.surname
@@ -43,5 +45,9 @@ export class LoginService {
       return isAfter(now, new Date(userLoggedTime))
     }
      return true;
+  }
+
+  registerUser(registerDto: RegisterDto): Observable<RegisterDto> {
+    return this.http.post<RegisterDto>(`${this.apiUrl}/users`, registerDto)
   }
 }

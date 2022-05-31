@@ -26,6 +26,12 @@ export class RegisterFormComponent implements OnInit {
   get surname() {
     return this.registerForm.get('surname');
   }
+  get dni() {
+    return this.registerForm.get('dni');
+  }
+  get phone() {
+    return this.registerForm.get('phone');
+  }
 
   get email() {
     return this.registerForm.get('email');
@@ -50,6 +56,8 @@ export class RegisterFormComponent implements OnInit {
       const registerDto = this.registerDtoBuilder(
         this.name?.value, 
         this.surname?.value,
+        this.dni?.value,
+        this.phone?.value,
         this.email?.value,
         this.password?.value);
 
@@ -61,15 +69,19 @@ export class RegisterFormComponent implements OnInit {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
       surname: ['', Validators.required],
+      dni: ['', Validators.required],
+      phone: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required]
     })
   }
 
-  private registerDtoBuilder(name: string, surname: string, email: string, password: string): RegisterDto {
+  private registerDtoBuilder(name: string, surname: string, dni: string, phone:string, email: string, password: string): RegisterDto {
     const registerDto: RegisterDto = new RegisterDto();
     registerDto.name = name;
     registerDto.surname = surname;
+    registerDto.dni = dni;
+    registerDto.phone = phone;
     registerDto.email = email;
     registerDto.password = password;
     return registerDto; 
