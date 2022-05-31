@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from './core/services/login.service';
 
 
 @Component({
@@ -8,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'devshop-front-angular';
+
 }

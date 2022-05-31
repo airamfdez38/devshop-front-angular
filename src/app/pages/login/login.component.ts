@@ -16,7 +16,9 @@ export class LoginComponent implements OnInit {
 
   public submittedLogin(loginDto: LoginDto): void {
       this.loginService.loginUser(loginDto).subscribe((res: any) => {
-        console.log(res)
+        if(res){
+          this.loginService.userCredentialsBuilder(res)
+        }
       })
   }
 
