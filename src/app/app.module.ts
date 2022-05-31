@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule }  from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderModule } from './components/shared/header/header.module';
@@ -13,7 +14,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
    
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HeaderModule, FooterModule, NavbarModule, FontAwesomeModule,
+    BrowserModule, 
+    AppRoutingModule, 
+    HttpClientModule,
+    HeaderModule, 
+    FooterModule, 
+    NavbarModule, 
+    FontAwesomeModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
