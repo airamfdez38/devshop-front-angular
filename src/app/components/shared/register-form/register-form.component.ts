@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { LoginDto } from 'src/app/core/models/login-dto.model';
 import { RegisterDto } from 'src/app/core/models/register-dto.model';
 
 @Component({
