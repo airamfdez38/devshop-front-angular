@@ -9,7 +9,7 @@ import SwiperCore, { SwiperOptions } from 'swiper';
 export class SliderComponent implements OnInit {
   @Input() imgCollection: string[]
   config: SwiperOptions = {
-    slidesPerView: 1,
+    slidesPerView: 3,
     spaceBetween: 5,
     navigation: true,
     pagination: { clickable: true },
