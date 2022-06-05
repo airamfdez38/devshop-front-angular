@@ -1,30 +1,38 @@
-<form [formGroup]="registerForm" novalidate>
-    <div>
-        <label for="name">Nombre</label>
-        <input type="text" formControlName="name">
-    </div>
-    <div>
-        <label for="surname">Apellidos</label>
-        <input type="text" formControlName="surname">
-    </div>
-    <div>
-        <label for="dni">DNI</label>
-        <input type="text" formControlName="dni">
-    </div>
-    <div>
-        <label for="email">Email</label>
-        <input type="email" formControlName="email">
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" formControlName="password">
-        <button (click)="tooglePassword">eye</button>
-    </div>
-    <div>
-        <label for="phone">Teléfono</label>
-        <input type="text" formControlName="phone">
-    </div>
-    <div>
-        <button type="submit" (click)="submit()">Enviar</button>
-    </div>
-</form>
+<div class="form__container w-72 mx-3 mt-2 mb-4 bg-lightNeutralDevshop                                                                                                                                                                     ">
+    <section class="login__logo flex ">
+        <figure class="logo__container ">
+            <img src="../../../../assets/img/logo-t.png" alt="Identidad corporativa" class="h-20">
+        </figure>
+    </section>
+    <p class="login__title pl-5 pb-4 text-sm text-darkPrimaryDevshop font-bold w-5/6">Registrate y llévate un 20% de descuento en tu primer pedido</p>
+    <form [formGroup]="registerForm" novalidate class="flex flex-col items-start justify-evenly h-fit ml-5">
+        <div class="flex flex-col">
+            <label for="name" class="text-sm text-darkPrimaryDevshop mb-3">Nombre</label>
+            <input type="text" formControlName="name" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+        </div>
+        <div class="flex flex-col">
+            <label for="surname" class="text-sm text-darkPrimaryDevshop mb-3">Apellidos</label>
+            <input type="text" formControlName="surname" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+        </div>
+        <div class="flex flex-col">
+            <label for="dni" class="text-sm text-darkPrimaryDevshop mb-3">DNI</label>
+            <input type="text" formControlName="dni" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+        </div>
+        <div class="flex flex-col">
+            <label for="email" class="text-sm text-darkPrimaryDevshop mb-3">Correo electrónico</label>
+            <input type="email" formControlName="email" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+        </div>
+        <div class="flex flex-col">
+            <label for="password" class="text-sm text-darkPrimaryDevshop mb-3">Contraseña</label>
+            <input type="password" formControlName="password" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+            <!--<button (click)="tooglePassword">eye</button>-->
+        </div>
+        <div class="flex flex-col">
+            <label for="phone" class="text-sm text-darkPrimaryDevshop mb-3">Teléfono</label>
+            <input type="text" formControlName="phone" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60">
+        </div>
+        
+        <button type="submit" (click)="submit()" class="text-lightNeutralDevshop mt-7 mb-5 bg-darkPrimaryDevshop rounded-lg pl-2 py-1 w-60">Registrar</button>
+        
+    </form>
+</div>

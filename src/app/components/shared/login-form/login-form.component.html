@@ -1,14 +1,26 @@
-<form [formGroup]="loginForm" novalidate>
-    <div>
-        <label for="email">Email</label>
-        <input type="email" formControlName="email">
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" formControlName="password">
-        <button (click)="tooglePassword">eye</button>
-    </div>
-    <div>
-        <button type="submit" (click)="submit()">Enviar</button>
-    </div>
-</form>
+<div class="form__container w-72 mx-3 mt-2 mb-4 bg-lightNeutralDevshop">                                                                                                                                                                   ">
+    <section class="login__logo flex ">
+        <figure class="logo__container ">
+            <img src="../../../../assets/img/logo-t.png" alt="Identidad corporativa" class="h-20">
+        </figure>
+    </section>
+    <p class="login__title pl-5 text-sm text-darkPrimaryDevshop font-bold">Iniciar sesión</p>
+    <form [formGroup]="loginForm" novalidate class="flex flex-col items-start justify-evenly h-48 ml-5">
+        <div class="flex flex-col">
+            <label for="email" class="text-sm text-darkPrimaryDevshop mb-3">Correo electrónico</label>
+            <input type="email" formControlName="email" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-full">
+        </div>
+        <div class="flex flex-col">
+            <label for="password" class="text-sm text-darkPrimaryDevshop">Contraseña</label>
+            <input type="password" formControlName="password" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-full">
+            <!--<button (click)="tooglePassword">eye</button>-->
+        </div>
+        
+        <button type="submit" (click)="submit()" class="text-lightNeutralDevshop mt-7 bg-darkPrimaryDevshop rounded-lg pl-2 py-1 w-56">Enviar</button>
+        
+    </form>
+    <p class="login__text pl-5 text-xxs text-darkPrimaryDevshop mb-3">¿Aún no tienes cuenta? Registrate</p>
+    <p class="login__text pl-5 text-xxs text-darkPrimaryDevshop pb-3 w-3/4">Este sitio está  protegido por reCAPTCHA y está sujeto a la Política de Privacidad y Condiciones de uso de Google</p>
+
+
+</div>
