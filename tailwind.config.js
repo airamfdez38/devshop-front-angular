@@ -2,11 +2,9 @@ module.exports = {
   content: ["./src/**/*.{html,scss,ts}",],
   theme: {
     screens:{
-      mobile: "320px",
-      tablet: "768px",
-      'desktop-small': '900px',
-      'desktop-medium': '1200px',
-      'desktop-large': '1800px'
+      mobile: {'min': '320px', 'max': '767px'},
+      tablet: {'min': '768px', 'max': '1023px'},
+      desktop: {'min': '1024px'}
     },
     extend: {
       colors: {
@@ -21,7 +19,7 @@ module.exports = {
         'logo': "url('')",
         'imageDesktop': "url('')",
         'imageTablet': "url('')",
-        'imageMobile': "url('')"
+        'imageMobile': "url('/src/assets/img/home_image.jpg')"
       },
       fontFamily: {
         sans: ['Roboto', 'Helvetica Neue', 'sans-serif']
