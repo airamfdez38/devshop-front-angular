@@ -1,10 +1,10 @@
-<div class="form__container w-72 mx-3 mt-2 mb-4 bg-lightNeutralDevshop">                                                                                                                                                                   ">
-    <section class="login__logo flex ">
-        <figure class="logo__container ">
+<div class="form__container w-full  mt-2 mb-4 bg-lightNeutralDevshop flex flex-col items-center                                                                                                                                                                 ">
+    <section class="login__logo ">
+        <figure class="logo__container mr-24">
             <img src="../../../../assets/img/logo-t.png" alt="Identidad corporativa" class="h-20">
         </figure>
     </section>
-    <p class="login__title pl-5 text-sm text-darkPrimaryDevshop font-bold">Iniciar sesión</p>
+    <p class="login__title text-sm text-darkPrimaryDevshop font-bold">Iniciar sesión</p>
     <form [formGroup]="loginForm" novalidate class="flex flex-col items-start justify-evenly h-48 ml-5">
         <div class="flex flex-col">
             <label for="email" class="text-sm text-darkPrimaryDevshop mb-3">Correo electrónico</label>
@@ -19,8 +19,8 @@
         <button type="submit" (click)="submit()" class="text-lightNeutralDevshop mt-7 bg-darkPrimaryDevshop rounded-lg pl-2 py-1 w-56">Enviar</button>
         
     </form>
-    <p class="login__text pl-5 text-xxs text-darkPrimaryDevshop mb-3">¿Aún no tienes cuenta? Registrate</p>
-    <p class="login__text pl-5 text-xxs text-darkPrimaryDevshop pb-3 w-3/4">Este sitio está  protegido por reCAPTCHA y está sujeto a la Política de Privacidad y Condiciones de uso de Google</p>
+    <p class="login__text pl-5 text-xxs text-darkPrimaryDevshop mb-3 mx-auto">¿Aún no tienes cuenta? Registrate</p>
+    <p class="login__text pl-10 text-xxs text-darkPrimaryDevshop pb-3  mx-auto">Este sitio está  protegido por reCAPTCHA y está sujeto a la Política de Privacidad y Condiciones de uso de Google</p>
 
 
 </div>
