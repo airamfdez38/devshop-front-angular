@@ -21,6 +21,7 @@ export class CartService {
     const cartItemCollection: CartItem[] = this.$cart.value;
     cartItemCollection.push(cartItem);
     this.$cart.next(cartItemCollection)
+    console.log(this.$cart.value);
     this.calcTotalPrice();
 
   }
