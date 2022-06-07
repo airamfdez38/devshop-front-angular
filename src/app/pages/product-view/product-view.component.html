@@ -1,0 +1,19 @@
+<section ngIf="product">
+    <div class="grid grid-cols-2">
+        <div>
+            <img [src]="product.image">
+        </div>
+        <div>
+        <h3>{{product?.name}}</h3>
+        <p>{{product?.category}}</p>
+        <p>{{product?.brand}}</p>
+        <p>{{product?.price}}</p>
+        <div>
+            <input type="number" [(ngModel)]="qty" >
+        </div>
+        <div>
+        <button (click)="addToCart(product)">Añadir al carrito</button>
+        </div>
+    </div>
+    </div>
+</section>

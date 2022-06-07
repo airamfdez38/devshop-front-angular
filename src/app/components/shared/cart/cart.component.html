@@ -1,0 +1,15 @@
+<section>
+    <ng-container *ngFor="let item of cartService.$cart| async">
+        <div>
+            <p>{{item.product.image}}</p>
+            <p>{{item.product.name}}</p>
+            <p>{{item.product.price}}</p>
+        </div>
+        <div>
+            <button (click)="cartService.removeItem(item)">No lo quiero</button>
+        </div>
+    </ng-container>
+    <div>
+        Total: {{cartService.calcTotalPrice()}}
+    </div>
+</section>

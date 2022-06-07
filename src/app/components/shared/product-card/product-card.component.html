@@ -1,0 +1,15 @@
+<section >
+    <header>
+        <img [src]="product?.image">
+    </header>
+    <div>
+        <h3>{{product?.name}}</h3>
+        <p>{{product?.category}}</p>
+        <p>{{product?.brand}}</p>
+        <p>{{product?.price}}</p>
+    </div>
+    <footer>
+        <button (click)="addToCart(product)">Añadir al carrito</button>
+        <button (click)="viewProduct(product)">Ver</button>
+    </footer>
+</section>
