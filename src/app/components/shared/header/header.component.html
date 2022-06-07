@@ -26,8 +26,9 @@
         </section>
         <section class="header-main__userArea hidden tablet:block desktop:block">
             <ul class="main-userArea__list tablet:flex flex-row desktop:flex flex-row pr-5">
-                <li class="userArea__link "><a (click)="goToLogin()" class="userArea-link__anchor text-darkPrimaryDevshop tablet: pr-2 desktop:mr-2"><fa-icon [icon]="faUser"></fa-icon></a></li>
-                <li class="userArea__link "><a (click)="goToCart()" class="userArea-link__anchor text-darkPrimaryDevshop"><fa-icon [icon]="faCartShopping"></fa-icon></a></li>
+                <li class="userArea__link cursor-pointer"><a (click)="logOut()" class="userArea-link__anchor text-darkPrimaryDevshop tablet: pr-2 desktop:mr-2">Logout</a></li>
+                <li class="userArea__link cursor-pointer"><a (click)="goToLogin()" class="userArea-link__anchor text-darkPrimaryDevshop tablet: pr-2 desktop:mr-2"><fa-icon [icon]="faUser"></fa-icon></a></li>
+                <li class="userArea__link cursor-pointer"><a (click)="goToCart()" class="userArea-link__anchor text-darkPrimaryDevshop"><fa-icon [icon]="faCartShopping"></fa-icon></a></li>
             </ul>
         </section>
     
