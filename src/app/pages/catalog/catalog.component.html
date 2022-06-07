@@ -1,0 +1,7 @@
+<section class="bg-red-500 h-96">
+    <div class="grid grid-cols-4">
+    <ng-container  *ngFor="let product of productCollection">
+        <app-product-card class="w-3/12 border border-slate-700" [product]="product" (viewProductEmitter)="gotoProduct($event)" (addCartProductEmitter)="addToCart($event)"></app-product-card>
+    </ng-container>
+    </div> 
+</section>
