@@ -7,7 +7,6 @@ import { HeaderModule } from './components/shared/header/header.module';
 import { FooterModule } from './components/shared/footer/footer.module';
 import { NavbarModule } from './components/shared/navbar/navbar.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CarouselModule } from './components/shared/carousel/carousel.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { CarouselModule } from './components/shared/carousel/carousel.module';
     FooterModule, 
     NavbarModule, 
     FontAwesomeModule,
-    CarouselModule
 
   ],
   providers: [],
