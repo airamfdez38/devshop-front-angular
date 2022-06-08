@@ -13,7 +13,7 @@ import { ProductService } from 'src/app/core/services/product.service';
 export class ProductViewComponent implements OnInit {
 
   public product: Product;
-  public qty: number;
+  public qty: number = 1;
 
   constructor(private route: ActivatedRoute, private productService: ProductService, private cartService: CartService) { }
 
@@ -51,6 +51,7 @@ export class ProductViewComponent implements OnInit {
     const newCartItem: CartItem = new CartItem()
     newCartItem.product = product;
     newCartItem.qty = this.qty;
+    this.cartService.addToCart(newCartItem)
   }
 
 }

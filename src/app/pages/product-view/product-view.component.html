@@ -1,19 +1,26 @@
-<section ngIf="product">
-    <div class="grid grid-cols-2">
-        <div>
-            <img [src]="product.image">
+<section *ngIf="product">
+    <div class="grid grid-cols-12 py-4 gap-4">
+        <div class="col-start-4 col-span-4 p-4">
+            <div>
+                <img [src]="product.image">
+            </div>
         </div>
-        <div>
-        <h3>{{product?.name}}</h3>
-        <p>{{product?.category}}</p>
-        <p>{{product?.brand}}</p>
-        <p>{{product?.price}}</p>
-        <div>
-            <input type="number" [(ngModel)]="qty" >
+
+        <div class="col-span-4  ">
+            <div class="p-2 ">
+                <h3 class="py-2">Producto: {{product?.name}}</h3>
+                <p class="py-2">Categoria: {{product?.category}}</p>
+                <p class="py-2">Marca: {{product?.brand}}</p>
+                <p class="py-2">Precio: {{product?.price}} €</p>
+                <div class="py-2">
+                    <label for="qty">Cantidad: </label>
+                    <input type="number"  min="1" [max]="product.stock" class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="qty" [(ngModel)]="qty">
+                </div>
+                <div class="py-8">
+                    <button class="bg-green-300 rounded-md p-2" (click)="addToCart(product)">Añadir al carrito</button>
+                </div>
+            </div>
+
         </div>
-        <div>
-        <button (click)="addToCart(product)">Añadir al carrito</button>
-        </div>
-    </div>
     </div>
 </section>

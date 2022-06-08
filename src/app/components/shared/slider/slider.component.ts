@@ -1,5 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import SwiperCore, { SwiperOptions } from 'swiper';
+
+
+import SwiperCore, { SwiperOptions, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+// install Swiper modules
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 @Component({
   selector: 'app-slider',

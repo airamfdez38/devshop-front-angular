@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Product } from '../models/product.model';
 
@@ -20,9 +20,12 @@ export class ProductService {
    * @return {*}  {Observable<Product[]>}
    * @memberof ProductService
    */
-  findAllProducts(): Observable<Product[]> {
+  findAllProducts(): Observable<any> {
+
     return this.http.get<Product[]>(`${this.apiUrl}products`)
   }
+
+
 
   /**
    * @description
@@ -30,7 +33,8 @@ export class ProductService {
    * @return {*}  {Observable<Product[]>}
    * @memberof ProductService
    */
-  findProductById(id: string): Observable<Product> {
+  findProductById(id: string): Observable<any> {
+
     return this.http.get<Product>(`${this.apiUrl}products/${id}`)
   }
 

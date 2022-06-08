@@ -1,3 +1,5 @@
+import { Supplier } from "./supplier.model";
+
 export class Product {
     uuid?: string;
 
@@ -12,4 +14,6 @@ export class Product {
     category: string;
 
     image: string;
+
+    supplier: Supplier
 }
