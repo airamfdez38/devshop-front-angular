@@ -68,7 +68,7 @@ export class LoginService {
   checkExpiration(userCredentials: UserCredentials | undefined): boolean {
     if (userCredentials) {
       const now = new Date();
-      const userLoggedTime = parseInt(userCredentials.expiration, 30);
+      const userLoggedTime = parseInt(userCredentials.expiration, 10);
       return isAfter(now, new Date(userLoggedTime))
     }
     return true;
@@ -87,9 +87,9 @@ export class LoginService {
   }
 
   logout() {
-    localStorage.removeItem("id_token");
-    localStorage.removeItem("expires_at");
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("userCart");
     this.$isLogged.next(undefined)
-    this.route.navigate(['login'])
+    this.route.navigate([''])
   }
 }

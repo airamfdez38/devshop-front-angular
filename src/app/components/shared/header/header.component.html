@@ -27,7 +27,8 @@
         <section class=" hidden tablet:block desktop:block">
             <ul class="tablet:flex flex-row desktop:flex flex-row pr-5">
                 <li class="cursor-pointer" *ngIf="loginService.$isLogged.value !== undefined"><a (click)="logOut()" class="text-darkPrimaryDevshop tablet: pr-2 desktop:mr-2">Logout</a></li>
-                <li class="cursor-pointer"><a (click)="goToLogin()" class="text-darkPrimaryDevshop tablet: pr-2 desktop:mr-2"><fa-icon [icon]="faUser"></fa-icon></a></li>
+                <li class="cursor-pointer" *ngIf="loginService.$isLogged.value !== undefined"> Hola {{loginService.$isLogged.value.user.name}}</li>
+                <li class="cursor-pointer"  *ngIf="loginService.$isLogged.value === undefined"><a (click)="goToLogin()" class="text-darkPrimaryDevshop tablet: pr-2 desktop:mr-2"><fa-icon [icon]="faUser"></fa-icon></a></li>
                 <li class="cursor-pointer"><a (click)="goToCart()" class="text-darkPrimaryDevshop"><fa-icon [icon]="faCartShopping"></fa-icon></a></li>
             </ul>
         </section>

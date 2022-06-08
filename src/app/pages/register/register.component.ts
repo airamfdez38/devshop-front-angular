@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
 
   registerUser(registerData: RegisterDto): void {
     this.loginService.registerUser(registerData).subscribe((res:any) => {
-      this.router.navigate(['/login'])
+      this.router.navigate([''])
     })
   }
 
