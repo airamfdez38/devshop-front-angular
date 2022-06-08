@@ -20,6 +20,11 @@ export class CartService {
   public addToCart(cartItem: CartItem) {
     const cartItemCollection: CartItem[] = this.$cart.value;
     cartItemCollection.push(cartItem);
+    const cartString: string = JSON.stringify(cartItemCollection);
+    if(localStorage.getItem('userCart')){
+      localStorage.removeItem('userCart')
+    }
+    localStorage.setItem('userCart', cartString)
     this.$cart.next(cartItemCollection)
     console.log(this.$cart.value);
     this.calcTotalPrice();
@@ -35,6 +40,11 @@ export class CartService {
   public removeItem(cartItem: CartItem) {
     const cartItemCollection: CartItem[] = this.$cart.value;
     const newCartItemCollection = cartItemCollection.filter((item: CartItem) => item.product.uuid !== cartItem.product.uuid);
+    const cartString: string = JSON.stringify(newCartItemCollection);
+    if(localStorage.getItem('userCart')){
+      localStorage.removeItem('userCart')
+    }
+    localStorage.setItem('userCart', cartString)
     this.$cart.next(newCartItemCollection)
     this.calcTotalPrice();
   }

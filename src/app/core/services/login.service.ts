@@ -28,7 +28,7 @@ export class LoginService {
    * @memberof LoginService
    */
   loginUser(loginDto: LoginDto): Observable<any> {
-    return this.http.post(`${this.apiUrl}/authentication/login`, loginDto)
+    return this.http.post(`${this.apiUrl}authentication/login`, loginDto)
   }
 
 
@@ -42,15 +42,18 @@ export class LoginService {
     const payloadBase64 = token.split('.')[1];
     const payload: UserCredentials = JSON.parse(atob(payloadBase64));
     const userCred: UserCredentials = new UserCredentials();
-    userCred.name = payload.name;
-    userCred.surname = payload.surname
-    userCred.phone = payload.phone;
-    userCred.email = payload.email;
-    userCred.dni = payload.dni;
-    userCred.image = payload.image;
-    userCred.uuid = payload.uuid;
+    userCred.user ={
+      name: payload.user.name,
+      surname: payload.user.surname,
+      phone: payload.user.phone,
+      email: payload.user.email,
+      dni: payload.user.dni,
+      image: payload.user.image,
+      uuid: payload.user.uuid,
+    } 
     userCred.expiration = payload.expiration;
     this.$isLogged.next(userCred);
+    console.log(this.$isLogged.value)
     localStorage.setItem('accessToken', token)
   }
 
@@ -65,7 +68,7 @@ export class LoginService {
   checkExpiration(userCredentials: UserCredentials | undefined): boolean {
     if (userCredentials) {
       const now = new Date();
-      const userLoggedTime = parseInt(userCredentials.expiration, 10);
+      const userLoggedTime = parseInt(userCredentials.expiration, 30);
       return isAfter(now, new Date(userLoggedTime))
     }
     return true;
@@ -80,7 +83,7 @@ export class LoginService {
    * @memberof LoginService
    */
   registerUser(registerDto: RegisterDto): Observable<RegisterDto> {
-    return this.http.post<RegisterDto>(`${this.apiUrl}/users`, registerDto)
+    return this.http.post<RegisterDto>(`${this.apiUrl}users`, registerDto)
   }
 
   logout() {
