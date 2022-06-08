@@ -6,6 +6,7 @@ import { environment } from '../../../environments/environment.prod';
 import { UserCredentials } from '../models/user-credentials.model';
 import { format, getUnixTime, isAfter } from 'date-fns';
 import { RegisterDto } from '../models/register-dto.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class LoginService {
 
   public $isLogged: BehaviorSubject<UserCredentials | undefined> = new BehaviorSubject<UserCredentials | undefined>(undefined)
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route: Router) { }
 
 
   /**
@@ -80,5 +81,12 @@ export class LoginService {
    */
   registerUser(registerDto: RegisterDto): Observable<RegisterDto> {
     return this.http.post<RegisterDto>(`${this.apiUrl}/users`, registerDto)
+  }
+
+  logout() {
+    localStorage.removeItem("id_token");
+    localStorage.removeItem("expires_at");
+    this.$isLogged.next(undefined)
+    this.route.navigate(['login'])
   }
 }

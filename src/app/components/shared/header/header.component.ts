@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {faFacebook, faInstagram, faTwitter,} from '@fortawesome/free-brands-svg-icons';
-import {faMagnifyingGlass, faUser, faCartShopping} from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faInstagram, faTwitter, } from '@fortawesome/free-brands-svg-icons';
+import { faMagnifyingGlass, faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { LoginService } from 'src/app/core/services/login.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -21,14 +22,19 @@ export class HeaderComponent implements OnInit {
 
 
 
-  constructor(private route:Router) { }
+  constructor(private route: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
-  goToCart(){
+  goToCart() {
     this.route.navigate(['cart'])
   }
-  goToLogin(){
+  goToLogin() {
     this.route.navigate(['login'])
+  }
+
+  logOut() {
+    this.loginService.logout()
+    this.route.navigate([''])
   }
 }
