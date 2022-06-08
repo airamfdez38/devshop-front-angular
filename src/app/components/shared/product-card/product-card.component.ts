@@ -12,6 +12,7 @@ export class ProductCardComponent {
   @Output() viewProductEmitter: EventEmitter<Product> = new EventEmitter<Product>()
   @Output() addCartProductEmitter: EventEmitter<Product> = new EventEmitter<Product>()
 
+  public showMyMessage = false
 
 
   /**
@@ -33,4 +34,28 @@ export class ProductCardComponent {
   viewProduct(product: Product) {
     this.viewProductEmitter.emit(product)
   }
+  /**
+  * @description
+  * This method emit a message when a product is added to cart
+  * @memberof ProductCardComponent
+  */
+  showMessageSoon() {
+    setInterval(() => {
+      this.showMyMessage = false
+    }, 1000)
+   
+  }
+   /**
+  * @description
+  * This method hide the message after a interval of time
+  * @memberof ProductCardComponent
+  */
+  hideMessage(){
+    this.showMessageSoon();
+    setTimeout(() => {this.showMyMessage = true}, 200)
+    
+  }
+  
+  
+  
 }
