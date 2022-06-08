@@ -1,17 +1,20 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginDto } from 'src/app/core/models/login-dto.model';
 
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss']
+  styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
   @Output() loginCredentialsEmitter: EventEmitter<LoginDto> = new EventEmitter<LoginDto>();
 
-  loginForm: FormGroup
+  loginForm = new  FormGroup({
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
+  })
 
   isPasswordVisible: boolean;
   

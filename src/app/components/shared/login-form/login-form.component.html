@@ -8,7 +8,8 @@
     <form [formGroup]="loginForm" novalidate class="flex flex-col items-start justify-evenly h-48 ml-5">
         <div class="flex flex-col">
             <label for="email" class="text-sm text-darkPrimaryDevshop mb-3">Correo electrónico</label>
-            <input type="email" formControlName="email" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-full">
+            <input type="email" ngModel [email]="true"  formControlName="email" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-full">
+            <span class="error text-sm" *ngIf="email?.invalid && email?.touched">Formato incorrecto.Campo obligatorio</span>
         </div>
         <div class="flex flex-col">
             <label for="password" class="text-sm text-darkPrimaryDevshop">Contraseña</label>
@@ -16,7 +17,7 @@
             <!--<button (click)="tooglePassword">eye</button>-->
         </div>
         
-        <button type="submit" (click)="submit()" (click)="navigateTo('')"  class="text-lightNeutralDevshop mt-7 bg-darkPrimaryDevshop rounded-lg pl-2 py-1 w-56">Enviar</button>
+        <button type="submit" (click)="submit()" (click)="navigateTo('')"  class="text-lightNeutralDevshop mt-7 bg-darkPrimaryDevshop rounded-lg pl-2 py-1 w-56">Iniciar sesión</button>
         
     </form>
     <p class="login__text pl-5 text-xxs text-darkPrimaryDevshop mb-3 mx-auto">¿Aún no tienes cuenta? Registrate</p>
