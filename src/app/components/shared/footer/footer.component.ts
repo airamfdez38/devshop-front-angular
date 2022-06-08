@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faHouse, faUser, faCartShopping,  } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -12,9 +13,12 @@ export class FooterComponent implements OnInit {
   public faCartShopping = faCartShopping;
 
 
-  constructor() { }
+  constructor(private route: Router) { }
+
 
   ngOnInit(): void {
   }
-
+  navigateTo(path: string) {
+    this.route.navigate([path])
+  }
 }

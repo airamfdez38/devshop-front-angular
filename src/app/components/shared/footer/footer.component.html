@@ -41,16 +41,16 @@
     <section class="footer__mobile bg-darkPrimaryDevshop w-full mt-0 pt-2 tablet:hidden desktop:hidden">
         <ul class="footer-mobile__list flex flex-row items-center justify-around">
             <li class="footer-mobile__link  ">
-                <a href="#" class="list-link__anchor text-lightNeutralDevshop"><fa-icon [icon]="faHouse" ></fa-icon></a>
+                <a (click)="navigateTo('')"  class="list-link__anchor text-lightNeutralDevshop"><fa-icon [icon]="faHouse" ></fa-icon></a>
             </li>
             <li class="footer-mobile__link ">
-                <a href="https://localhost:4200/login" class="list-link__anchor text-lightNeutralDevshop"><fa-icon [icon]="faUser"></fa-icon></a>
+                <a (click)="navigateTo('login')" class="list-link__anchor text-lightNeutralDevshop"><fa-icon [icon]="faUser"></fa-icon></a>
             </li>
             <li class="footer-mobile__link ">
-                <a href="https://twitter.com/?lang=es" class="list-link__anchor text-lightNeutralDevshop"><fa-icon [icon]="faCartShopping"></fa-icon></a>
+                <a (click)="navigateTo('cart')" class="list-link__anchor text-lightNeutralDevshop"><fa-icon [icon]="faCartShopping"></fa-icon></a>
             </li>
             <li class="footer-mobile__link mr-4">
-                <a href="https://localhost:4200/catalog" class="list-link__anchor text-lightNeutralDevshop"><fa-icon [icon]="faCartShopping"></fa-icon></a>
+                <a (click)="navigateTo('catalog')"  class="list-link__anchor text-lightNeutralDevshop"><fa-icon [icon]="faCartShopping"></fa-icon></a>
             </li>
         </ul>
     </section>
