@@ -31,6 +31,7 @@ export class HeaderComponent implements OnInit {
   }
   goToLogin() {
     this.route.navigate(['login'])
+   
   }
 
   logOut() {

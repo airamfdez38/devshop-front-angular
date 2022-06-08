@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginDto } from 'src/app/core/models/login-dto.model';
 
 @Component({
@@ -13,8 +14,9 @@ export class LoginFormComponent implements OnInit {
   loginForm: FormGroup
 
   isPasswordVisible: boolean;
+  
 
-  constructor( private fb: FormBuilder) {
+  constructor(private route: Router, private fb: FormBuilder) {
     this.isPasswordVisible = false;
   }
 
@@ -28,6 +30,10 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
+  }
+
+  navigateTo(path: string) {
+    this.route.navigate([path])
   }
 
 
@@ -56,5 +62,5 @@ export class LoginFormComponent implements OnInit {
     return loginDto; 
   }
   
-
+ 
 }
