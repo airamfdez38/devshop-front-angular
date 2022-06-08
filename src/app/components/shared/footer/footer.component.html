@@ -1,56 +1,58 @@
 <footer class=" tablet:flex flex-row justify-around items-center bg-lightNeutralDevshop border-t border-darkPrimaryDevshop desktop:flex"> 
-    <section class="footer__lists hidden tablet:flex flex-col justify-between items-start w-3/5 bg-lightNeutralDevshop desktop:flex">
-        <section class="lists__info tablet:flex flex-row justify-around items-start mt-5 w-full desktop:flex">
-            <section class="footer-lists__aboutUs tablet:flex flex-col items-start desktop:flex" >
-                <h3 class="lists-aboutUs__title  tablet:uppercase text-darkPrimaryDevshop font-bold text-sm desktop:uppercase text-darkPrimaryDevshop font-bold text-sm " >Sobre nosotros</h3>
-                <ul class="lists-aboutUs__list ">
-                    <li class="list__link "><a href="" class="list-link__anchor tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Quiénes somos</a></li>
-                    <li class="list__link "><a href="" class="list-link__anchor tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Responsabilidad social</a></li>
-                    <li class="list__link "><a href="" class="list-link__anchor tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Condiciones de uso</a></li>
-                    <li class="list__link "><a href="" class="list-link__anchor tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Política de privacidad</a></li>
+    <section class="hidden tablet:flex flex-col justify-between items-start w-3/5 bg-lightNeutralDevshop desktop:flex">
+        <section class="tablet:flex flex-row justify-around items-start mt-5 w-full desktop:flex">
+            <section class="tablet:flex flex-col items-start desktop:flex" >
+                <h3 class="tablet:uppercase text-darkPrimaryDevshop font-bold text-sm desktop:uppercase text-darkPrimaryDevshop font-bold text-sm " >Sobre nosotros</h3>
+                <ul >
+                    <li ><a href="" class="tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Quiénes somos</a></li>
+                    <li ><a href="" class="tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Responsabilidad social</a></li>
+                    <li ><a href="" class="tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Condiciones de uso</a></li>
+                    <li ><a href="" class="tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Política de privacidad</a></li>
                 </ul>
             </section>
-            <section class="footer-lists__help">
-                <h3 class="lists-help__title tablet:uppercase text-darkPrimaryDevshop font-bold text-sm desktop:uppercase text-darkPrimaryDevshop font-bold text-sm ">Ayuda</h3>
-                <ul class="lists-help__list ">
-                    <li class="list__link "><a href="" class="list-link__anchor tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Devoluciones</a></li>
-                    <li class="list__link "><a href="" class="list-link__anchor tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Contacto</a></li>
+            <section >
+                <h3 class="tablet:uppercase text-darkPrimaryDevshop font-bold text-sm desktop:uppercase text-darkPrimaryDevshop font-bold text-sm ">Ayuda</h3>
+                <ul >
+                    <li ><a href="" class="tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Devoluciones</a></li>
+                    <li ><a href="" class="tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Contacto</a></li>
                 </ul>
             </section>
-            <section class="footer-lists__followUs ">
-                <h3 class="lists-followUs__title tablet:uppercase text-darkPrimaryDevshop font-bold text-sm desktop:uppercase text-darkPrimaryDevshop font-bold text-sm ">Sobre nosotros</h3>
-                <ul class="lists-followUs__list ">
-                    <li class="list__link "><a href="" class="list-link__anchor tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Facebook</a></li>
-                    <li class="list__link "><a href="" class="list-link__anchor tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Instagram</a></li>
-                    <li class="list__link "><a href="" class="list-link__anchor tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Twitter</a></li>
+            <section >
+                <h3 class="tablet:uppercase text-darkPrimaryDevshop font-bold text-sm desktop:uppercase text-darkPrimaryDevshop font-bold text-sm ">Sobre nosotros</h3>
+                <ul>
+                    <li ><a href="" class="tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Facebook</a></li>
+                    <li ><a href="" class="tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Instagram</a></li>
+                    <li ><a href="" class="tablet:text-xs text-darkPrimaryDevshop desktop:text-xs text-darkPrimaryDevshop">Twitter</a></li>
                 </ul>
             </section>
         </section>
-        <section class="lists__copyright hidden tablet:flex text-darkPrimaryDevshop text-xxs m-auto pt-2 desktop:flex desktop: text-darkPrimaryDevshop  text-xxs m-auto pt-2 ">
-            <p class="copyright__text text-xs ">@DevShop.Todos los derechos reservados</p>
+        <section class="hidden tablet:flex text-darkPrimaryDevshop text-xxs m-auto pt-2 desktop:flex desktop: text-darkPrimaryDevshop  text-xxs m-auto pt-2 ">
+            <p class="text-xs ">@DevShop.Todos los derechos reservados</p>
         </section>
     </section>
-    <section class="footer__logo hidden tablet:flex flex-col items-center justify-between bg-lightPrimaryDevshop py-2 px-2 desktop:flex w-96">
-        <figure class="footer-logo__image ">
-            <img src="./../../../../assets/img/logo-t.png" alt="Identidad corporativa">
+    <section class="tablet:flex flex-col items-center justify-between bg-lightPrimaryDevshop py-2 px-2 desktop:flex w-96">
+        <figure class="cursor-pointer"> 
+            <a (click)="navigateTo('')">
+                <img  src="../../../../assets/img/logo-t.png" alt="Identidad corporativa"  class="desktop: h-24 pr-28 ">
+            </a>
         </figure>
-        <div class="footer-logo__divider tablet:flex leading-none bg-darkPrimaryDevshop desktop:flex"></div>
-        <p class="footer-logo__slogan text-base text-darkPrimaryDevshop">One either loves it or one hates it</p>
+        <div class="tablet:flex leading-none bg-darkPrimaryDevshop desktop:flex"></div>
+        <p class="ext-base text-darkPrimaryDevshop">One either loves it or one hates it</p>
     </section>
    
-    <section class="footer__mobile bg-darkPrimaryDevshop w-full mt-0 pt-2 tablet:hidden desktop:hidden">
-        <ul class="footer-mobile__list flex flex-row items-center justify-around">
-            <li class="footer-mobile__link  ">
-                <a (click)="navigateTo('')"  class="list-link__anchor text-lightNeutralDevshop"><fa-icon [icon]="faHouse" ></fa-icon></a>
+    <section class="bg-darkPrimaryDevshop w-full mt-0 pt-2 tablet:hidden desktop:hidden">
+        <ul class="flex flex-row items-center justify-around">
+            <li class="cursor-pointer">
+                <a (click)="navigateTo('')"  class="text-lightNeutralDevshop"><fa-icon [icon]="faHouse" ></fa-icon></a>
             </li>
-            <li class="footer-mobile__link ">
-                <a (click)="navigateTo('login')" class="list-link__anchor text-lightNeutralDevshop"><fa-icon [icon]="faUser"></fa-icon></a>
+            <li class="cursor-pointer">
+                <a (click)="navigateTo('login')" class="text-lightNeutralDevshop"><fa-icon [icon]="faUser"></fa-icon></a>
             </li>
-            <li class="footer-mobile__link ">
-                <a (click)="navigateTo('cart')" class="list-link__anchor text-lightNeutralDevshop"><fa-icon [icon]="faCartShopping"></fa-icon></a>
-            </li>
-            <li class="footer-mobile__link mr-4">
-                <a (click)="navigateTo('catalog')"  class="list-link__anchor text-lightNeutralDevshop"><fa-icon [icon]="faCartShopping"></fa-icon></a>
+            <li class="cursor-pointer">
+                <a (click)="navigateTo('cart')" class="text-lightNeutralDevshop"><fa-icon [icon]="faCartShopping"></fa-icon></a>
+            </li >
+            <li class="cursor-pointer">
+                <a (click)="navigateTo('catalog')"  class="text-lightNeutralDevshop"><fa-icon [icon]="faCartShopping"></fa-icon></a>
             </li>
         </ul>
     </section>

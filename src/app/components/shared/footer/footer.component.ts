@@ -21,4 +21,5 @@ export class FooterComponent implements OnInit {
   navigateTo(path: string) {
     this.route.navigate([path])
   }
+  
 }
