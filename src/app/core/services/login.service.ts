@@ -7,6 +7,7 @@ import { UserCredentials } from '../models/user-credentials.model';
 import { format, getUnixTime, isAfter } from 'date-fns';
 import { RegisterDto } from '../models/register-dto.model';
 import { Router } from '@angular/router';
+import { ContactDto } from '../models/contact-dto.model';
 
 @Injectable({
   providedIn: 'root'
@@ -86,6 +87,16 @@ export class LoginService {
     return this.http.post<RegisterDto>(`${this.apiUrl}users`, registerDto)
   }
 
+   /**
+   * @description
+   * This method make the request to register a new user
+   * @param {ContactDto} contactDto
+   * @return {*}  {Observable<RegisterDto>}
+   * @memberof LoginService
+   */
+    contactUser(contactDto: ContactDto): Observable<ContactDto> {
+      return this.http.post<ContactDto>(`${this.apiUrl}users`, contactDto)
+    }
   logout() {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("userCart");

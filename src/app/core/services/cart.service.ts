@@ -49,7 +49,6 @@ export class CartService {
     this.calcTotalPrice();
   }
 
-
   /**
    * @description
    * This method calc the total price from $cart to cartTotal observable
