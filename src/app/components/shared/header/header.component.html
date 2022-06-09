@@ -20,14 +20,14 @@
             <input type="text" name="" id="" class="ml-3 pl-1 tablet:bg-lightPrimaryDevshop desktop:bg-lightPrimaryDevshop" placeholder="Buscador">
         </section>                              
         <section class="hidden desktop:block">
-            <figure > 
+            <figure class=" cursor-pointer"(click)="navigateTo('')"> 
                 <img ng-click="goToInit()" src="../../../../assets/img/logo-t.png" alt="Identidad corporativa"  class="desktop: h-24 pr-28 ">
             </figure>
         </section>
         <section class=" hidden tablet:block desktop:block">
-            <ul class="tablet:flex flex-row desktop:flex flex-row pr-5">
-                <li class="cursor-pointer" *ngIf="loginService.$isLogged.value !== undefined"><a (click)="logOut()" class="text-darkPrimaryDevshop tablet: pr-2 desktop:mr-2">Logout</a></li>
-                <li class="cursor-pointer" *ngIf="loginService.$isLogged.value !== undefined"> Hola {{loginService.$isLogged.value.user.name}}</li>
+            <ul class="tablet:flex flex-row justify-around desktop:flex flex-row pr-5">
+                <li class="cursor-pointer" *ngIf="loginService.$isLogged.value !== undefined"><a (click)="logOut()" class="text-darkPrimaryDevshop tablet: pr-2 desktop:mr-2"><fa-icon [icon] = "faRightFromBracket"></fa-icon></a></li>
+                <li class="cursor-pointer text-xs" *ngIf="loginService.$isLogged.value !== undefined"> Hola {{loginService.$isLogged.value.user.name}}</li>
                 <li class="cursor-pointer"  *ngIf="loginService.$isLogged.value === undefined"><a (click)="goToLogin()" class="text-darkPrimaryDevshop tablet: pr-2 desktop:mr-2"><fa-icon [icon]="faUser"></fa-icon></a></li>
                 <li class="cursor-pointer"><a (click)="goToCart()" class="text-darkPrimaryDevshop"><fa-icon [icon]="faCartShopping"></fa-icon></a></li>
             </ul>
