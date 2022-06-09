@@ -1,21 +1,29 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RegisterDto } from 'src/app/core/models/register-dto.model';
 
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.scss']
+  styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent implements OnInit {
 
   @Output() registerCredentialsEmitter: EventEmitter<RegisterDto> = new EventEmitter<RegisterDto>();
 
-  registerForm: FormGroup
+  registerForm = new  FormGroup({
+    name: new FormControl('', Validators.required),
+    surname: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    phone: new FormControl('', Validators.required),
+
+  })
 
   isPasswordVisible: boolean;
 
-  constructor( private fb: FormBuilder) {
+  constructor(private route: Router, private fb: FormBuilder) {
     this.isPasswordVisible = false;
   }
 
@@ -26,9 +34,7 @@ export class RegisterFormComponent implements OnInit {
   get surname() {
     return this.registerForm.get('surname');
   }
-  get dni() {
-    return this.registerForm.get('dni');
-  }
+  
   get phone() {
     return this.registerForm.get('phone');
   }
@@ -44,6 +50,9 @@ export class RegisterFormComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
   }
+  navigateTo(path: string) {
+    this.route.navigate([path])
+  }
 
 
   public tooglePassword(): void {
@@ -56,7 +65,6 @@ export class RegisterFormComponent implements OnInit {
       const registerDto = this.registerDtoBuilder(
         this.name?.value, 
         this.surname?.value,
-        this.dni?.value,
         this.phone?.value,
         this.email?.value,
         this.password?.value);
@@ -67,20 +75,18 @@ export class RegisterFormComponent implements OnInit {
 
   private initForm():void {
     this.registerForm = this.fb.group({
-      name: ['', Validators.required],
-      surname: ['', Validators.required],
-      dni: ['', Validators.required],
-      phone: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      name: ['', Validators.pattern('^[a-zA-Z \-\']+')],
+      surname: ['', Validators.pattern('^[a-zA-Z \-\']+')],
+      phone: ['', Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
+      email: ['', Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")],
+      password: ['', Validators.pattern("/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/")]
     })
   }
 
-  private registerDtoBuilder(name: string, surname: string, dni: string, phone:string, email: string, password: string): RegisterDto {
+  private registerDtoBuilder(name: string, surname: string, phone:string, email: string, password: string): RegisterDto {
     const registerDto: RegisterDto = new RegisterDto();
     registerDto.name = name;
     registerDto.surname = surname;
-    registerDto.dni = dni;
     registerDto.phone = phone;
     registerDto.email = email;
     registerDto.password = password;

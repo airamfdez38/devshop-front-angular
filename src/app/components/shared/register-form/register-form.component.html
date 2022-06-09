@@ -1,38 +1,41 @@
-<div class="form__container w-full  mt-2 mb-4 bg-lightNeutralDevshop flex flex-col items-center                                                                                                                                                                   ">
-    <section class="login__logo ">
-        <figure class="logo__container mr-24 ">
+<div class="w-full  mt-2 mb-4 bg-lightNeutralDevshop flex flex-col items-center                                                                                                                                                                   ">
+    <section>
+        <figure class="mr-24 ">
             <img src="../../../../assets/img/logo-t.png" alt="Identidad corporativa" class="h-20">
         </figure>
     </section>
-    <p class="login__title text-sm text-darkPrimaryDevshop font-bold">Registrate y llévate un 20% de descuento en tu primer pedido</p>
+    <p class="text-sm text-darkPrimaryDevshop font-bold">Registrate y llévate un 20% de descuento en tu primer pedido</p>
     <form [formGroup]="registerForm" novalidate class="flex flex-col items-start justify-evenly h-fit ml-5">
         <div class="flex flex-col">
             <label for="name" class="text-sm text-darkPrimaryDevshop mb-3">Nombre</label>
-            <input type="text" formControlName="name" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+            <input type="text" required minlength="3" formControlName="name" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+            <span class="error text-sm" *ngIf="name?.invalid && name?.touched">Formato incorrecto.Campo obligatorio</span>
         </div>
+      
         <div class="flex flex-col">
             <label for="surname" class="text-sm text-darkPrimaryDevshop mb-3">Apellidos</label>
-            <input type="text" formControlName="surname" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+            <input type="text" required minlength="2" formControlName="surname" class=" border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+            <span class="error text-sm" *ngIf="surname?.invalid && surname?.touched">Formato incorrecto.Campo obligatorio</span>
         </div>
         <div class="flex flex-col">
-            <label for="dni" class="text-sm text-darkPrimaryDevshop mb-3">DNI</label>
-            <input type="text" formControlName="dni" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+            <label for="email" class="text-sm text-darkPrimaryDevshop mb-3">Email</label>
+            <input type="text" required  formControlName="email" class=" border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+            <span class="error text-sm" *ngIf="email?.invalid && email?.touched">Formato incorrecto.Campo obligatorio</span>
         </div>
-        <div class="flex flex-col">
-            <label for="email" class="text-sm text-darkPrimaryDevshop mb-3">Correo electrónico</label>
-            <input type="email" formControlName="email" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
-        </div>
+        
         <div class="flex flex-col">
             <label for="password" class="text-sm text-darkPrimaryDevshop mb-3">Contraseña</label>
-            <input type="password" formControlName="password" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+            <input type="password" required formControlName="password" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
             <!--<button (click)="tooglePassword">eye</button>-->
         </div>
         <div class="flex flex-col">
             <label for="phone" class="text-sm text-darkPrimaryDevshop mb-3">Teléfono</label>
-            <input type="text" formControlName="phone" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60">
+            <input type="text" required formControlName="phone" maxlength="9" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60">
+            <span class="error text-sm" *ngIf="phone?.invalid && phone?.touched">Formato incorrecto.Campo obligatorio</span>
+
         </div>
         
-        <button type="submit" (click)="submit()" class="text-lightNeutralDevshop mt-7 mb-5 bg-darkPrimaryDevshop rounded-lg pl-2 py-1 w-60">Registrar</button>
+        <button type="submit" (click)="submit()"  (click)="navigateTo('')" class="text-lightNeutralDevshop mt-7 mb-5 bg-darkPrimaryDevshop rounded-lg pl-2 py-1 w-60">Registrar</button>
         
     </form>
 </div>
