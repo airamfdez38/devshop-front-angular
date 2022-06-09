@@ -8,6 +8,7 @@ import { format, getUnixTime, isAfter } from 'date-fns';
 import { RegisterDto } from '../models/register-dto.model';
 import { Router } from '@angular/router';
 import { ContactDto } from '../models/contact-dto.model';
+import { CartService } from './cart.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class LoginService {
 
   public $isLogged: BehaviorSubject<UserCredentials | undefined> = new BehaviorSubject<UserCredentials | undefined>(undefined)
 
-  constructor(private http: HttpClient, private route: Router) { }
+  constructor(private cartService: CartService, private http: HttpClient, private route: Router) { }
 
 
   /**
@@ -101,6 +102,8 @@ export class LoginService {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("userCart");
     this.$isLogged.next(undefined)
+    this.cartService.$cart.next([])
+    this.cartService.$cartTotal.next(0)
     this.route.navigate([''])
   }
 }
