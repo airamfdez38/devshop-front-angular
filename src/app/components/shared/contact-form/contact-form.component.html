@@ -1,0 +1,36 @@
+<div class="w-full  mt-2 mb-4 bg-lightNeutralDevshop flex flex-col items-center                                                                                                                                                                   ">
+    <section>
+        <figure class="mr-24 ">
+            <img src="../../../../assets/img/logo-t.png" alt="Identidad corporativa" class="h-20">
+        </figure>
+    </section>
+    <p class="text-sm text-darkPrimaryDevshop font-bold">Formulario de contacto</p>
+    <form [formGroup]="contactForm" novalidate class="flex flex-col items-start justify-evenly h-fit ml-5">
+        <div class="flex flex-col">
+            <label for="name" class="text-sm text-darkPrimaryDevshop mb-3">Nombre</label>
+            <input type="text" required minlength="3" formControlName="name" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+            <span class="error text-sm" *ngIf="name?.invalid && name?.touched">Formato incorrecto.Campo obligatorio</span>
+        </div>
+      
+        <div class="flex flex-col">
+            <label for="surname" class="text-sm text-darkPrimaryDevshop mb-3">Apellidos</label>
+            <input type="text" required minlength="2" formControlName="surname" class=" border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+            <span class="error text-sm" *ngIf="surname?.invalid && surname?.touched">Formato incorrecto.Campo obligatorio</span>
+        </div>
+        <div class="flex flex-col">
+            <label for="email" class="text-sm text-darkPrimaryDevshop mb-3">Email</label>
+            <input type="text" required  formControlName="email" class=" border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60 mb-4">
+            <span class="error text-sm" *ngIf="email?.invalid && email?.touched">Formato incorrecto.Campo obligatorio</span>
+        </div>
+  
+        <div class="flex flex-col ">
+            <label for="msg" class="text-sm text-darkPrimaryDevshop mb-3">Mensaje</label>
+            <input type="text" required formControlName="msg" maxlength="255" class="border-darkPrimaryDevshop border bg-lightNeutralDevshop rounded-lg pl-2 w-60">
+            <span class="error text-sm" *ngIf="msg?.invalid && msg?.touched">Formato incorrecto.Campo obligatorio</span>
+
+        </div>
+        
+        <button type="submit" (click)="submit()"  (click)="navigateTo('')" class="text-lightNeutralDevshop mt-7 mb-5 bg-darkPrimaryDevshop rounded-lg pl-2 py-1 w-60">Registrar</button>
+        
+    </form>
+</div>
