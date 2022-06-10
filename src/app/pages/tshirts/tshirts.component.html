@@ -1,13 +1,7 @@
 <section class="w-full mx-auto">
     <div class="grid grid-cols-1 justify-items-center mt-8 tablet:grid-cols-2 desktop:grid-cols-4 gap-4">
     <ng-container *ngFor="let product of productCollection">
-        <div *ngIf="catName === 'Camiseta' ">
-            <h3 class="py-2">Producto: {{product?.name}}</h3>
-            <p class="py-2">Marca: {{product?.brand}}</p>
-            <p class="py-2">{{product?.image}} </p>
-            <p class="py-2">{{product?.price}}</p>
-
-        </div>
+        <app-product-card [product]="product" (viewProductEmitter)="gotoProduct($event)" (addCartProductEmitter)="addToCart($event)"></app-product-card>
     </ng-container>
-</div> 
+    </div> 
 </section>
