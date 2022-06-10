@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tshirts/tshirts.module').then(m => m.TshirtsModule)
   },
   {
+    path: 'mugs',
+    loadChildren: () => import('./pages/mugs/mugs.module').then(m => m.MugsModule)
+  },
+  {
     path: 'product/:id',
     loadChildren: () => import('./pages/product-view/product-view.module').then(m => m.ProductViewModule)
   },
