@@ -8,6 +8,10 @@ import { FooterModule } from './components/shared/footer/footer.module';
 import { NavbarModule } from './components/shared/navbar/navbar.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+/**Every Angular application has a root module, conventionally named AppModule,
+ * which provides the bootstrap mechanism that launches the application. 
+ * An application typically contains many functional modules.
+ * */
 @NgModule({
   declarations: [
     AppComponent,

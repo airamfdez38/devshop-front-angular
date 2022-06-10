@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+/**
+ * The Angular Router NgModule provides a service that lets you define a navigation
+ *  path among the different application states and view hierarchies in your application. 
+ * It is modeled on the familiar browser navigation conventions:
+ */
 
 const routes: Routes = [
   {

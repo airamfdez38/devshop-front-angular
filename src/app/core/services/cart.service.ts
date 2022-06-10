@@ -2,6 +2,12 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { CartItem } from '../models/cart-item.model';
 
+/**Services are for data or logic that isn't associated with a specific view,
+ *  and that you want to share across components, you create a service class.
+ *  A service class definition is immediately preceded by the @Injectable() decorator. 
+ * The decorator provides the metadata that allows other providers to be injected as dependencies into your class. */
+/** @Injectable is a decorator that marks a class as available to be provided and injected as a dependency */
+
 @Injectable({
   providedIn: 'root'
 })

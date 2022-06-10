@@ -10,6 +10,12 @@ import { Router } from '@angular/router';
 import { ContactDto } from '../models/contact-dto.model';
 import { CartService } from './cart.service';
 
+/**Services are for data or logic that isn't associated with a specific view,
+ *  and that you want to share across components, you create a service class.
+ *  A service class definition is immediately preceded by the @Injectable() decorator. 
+ * The decorator provides the metadata that allows other providers to be injected as dependencies into your class. */
+/** @Injectable is a decorator that marks a class as available to be provided and injected as a dependency */
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +35,8 @@ export class LoginService {
    * @return {*}  {Observable<any>}
    * @memberof LoginService
    */
+  /**@Observables provide support for passing messages between parts of your application */
+
   loginUser(loginDto: LoginDto): Observable<any> {
     return this.http.post(`${this.apiUrl}authentication/login`, loginDto)
   }
